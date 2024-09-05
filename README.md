@@ -1,3 +1,3 @@
-# xieyuxuan44/dsa-mbt
+# dsa-mbt
 
 Data structures and algorithms written in moonbit.
