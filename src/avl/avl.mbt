@@ -6,23 +6,6 @@ pub fn AVLTree::emptyAVLTree[K, V]() -> AVLTree[K, V] {
   Nil
 }
 
-fn height[K, V](self : AVLTree[K, V]) -> Int {
-  match self {
-    Nil => 0
-    Node(_, _, _, ~height) => height
-  }
-}
-
-fn create[K, V](
-  left : AVLTree[K, V],
-  entry : Entry[K, V],
-  right : AVLTree[K, V]
-) -> AVLTree[K, V] {
-  let hl = left.height()
-  let hr = right.height()
-  Node(left, entry, right, height=if hl >= hr { hl } else { hr } + 1)
-}
-
 pub fn set[K : Compare, V](
   self : AVLTree[K, V],
   entry : Entry[K, V]
@@ -90,6 +73,23 @@ pub fn to_string[K : Show, V : Show](self : AVLTree[K, V]) -> String {
       "  preorder: \{self.preorder()}}\n" +
       "  inorder: \{self.inorder()}"
   }
+}
+
+fn height[K, V](self : AVLTree[K, V]) -> Int {
+  match self {
+    Nil => 0
+    Node(_, _, _, ~height) => height
+  }
+}
+
+fn create[K, V](
+  left : AVLTree[K, V],
+  entry : Entry[K, V],
+  right : AVLTree[K, V]
+) -> AVLTree[K, V] {
+  let hl = left.height()
+  let hr = right.height()
+  Node(left, entry, right, height=if hl >= hr { hl } else { hr } + 1)
 }
 
 fn peel_max[K : Compare, V](
