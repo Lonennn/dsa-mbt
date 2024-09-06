@@ -1,4 +1,3 @@
-
 fn sorted[T : Compare](arr : Array[T], ~current : Int = 1) -> Bool {
   if current >= arr.length() {
     true
