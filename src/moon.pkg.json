@@ -1,6 +1,8 @@
 {
   "import": [
     "xieyuxuan44/dsa-mbt/avl",
-    "xieyuxuan44/dsa-mbt/sort"
+    "xieyuxuan44/dsa-mbt/sort",
+    "xieyuxuan44/dsa-mbt/stack",
+    "xieyuxuan44/dsa-mbt/arrays"
   ]
 }
